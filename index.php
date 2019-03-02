@@ -31,12 +31,12 @@
         </div>
         </div>
     </nav>
-    <header data-bs-hover-animate="tada" class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
+    <header  class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
         <div class="container h-100">
             <div class="row h-100" style="width: 476px;">
                 <div class="col-lg-7 my-auto">
                     <div class="mx-auto header-content">
-                        <h1 data-bs-hover-animate="rubberBand" class="mb-5">Write Some Text Here</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#features">SIGN Up For FREE</a></div>
+                        <h1 class="mb-5">Write Some Text Here</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#features">SIGN Up For FREE</a></div>
                 </div>
             </div>
         </div>
@@ -51,16 +51,24 @@
                     <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password" name="password"></div>
                     <div class="form-group">
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
-                    </div><input class="btn btn-primary btn-block" type="submit" value="login"></form>
+                    </div><input class="btn btn-primary btn-block" type="submit" value="login">
+                </form>
             </div>
         </section>
     <section id="features" class="features">
         <div class="container">
             <div class="section-heading text-center">
                 <h2>Create Account</h2>
-                <p class="text-muted">Check out what you can do with this app</p><input class="form-control-lg" type="email" placeholder="Mobile" inputmode="email" style="font-family: Lato, sans-serif;opacity: 0.40;width: 253px;padding: 5px;margin: 31px;"><input class="form-control-lg" type="password" placeholder="password" inputmode="password" style="font-family: Lato, sans-serif;opacity: 0.40;width: 253px;padding: 5px;margin: 31px;"><a class="btn btn-outline-primary visible"
-                    role="button" href="untitled.php" style="margin: -1px;padding: 9px;width: 157px;height: 45px;background-color: #e41313;">get started</a>
+                <p class="text-muted">Check out what you can do with this app</p>
                 <hr>
+                <form id="login_form" action="signup.php">
+                    <div class="form-group"><label for="name">Username</label><input class="form-control item" type="text" id="name" name="name"> </div>
+                    <div class="form-group"><label for="Mobile Number">Mobile Number</label><input class="form-control item" type="number" id="mobilenumber" name="mobilenumber"> </div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password" name="password"></div>
+                    <div class="form-group">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
+                    </div><input class="btn btn-primary btn-block" type="submit" value="login">
+                </form>
             </div>
             <div class="row">
                 <div class="col-lg-4 my-auto">
