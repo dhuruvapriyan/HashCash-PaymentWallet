@@ -52,9 +52,9 @@ $result = mysqli_query($con,$sql);
                         <h1 class="mb-5">Hi <?php echo $name?></h1>
                         <h1 class="mb-5">Enter old and new password</h1>
                         <form class="bootstrap-form-with-validation" action = changepwd.php>
-                            <div class="form-group"><label for="password-input">Old Password</label><input class="form-control" type="password" name="old" placeholder="Enter Old Password" id="old" style="opacity: 0.4;"></div>
-                            <div class="form-group"><label for="password-input">New Password</label><input class="form-control" type="password" name="new" placeholder="Enter New Password" id="new" style="opacity: 0.4;"></div>
-                            <div class="form-group"><label for="password-input">Confirm New Password</label><input class="form-control" type="password" name="cnfnew" placeholder="Confirm New Password" id="cnfnew" style="opacity: 0.4;"></div>
+                            <div class="form-group"><label for="password-input">Old Password</label><input class="form-control" type="password" name="old" placeholder="Enter Old Password" minlength="8" id="old" style="opacity: 0.4;"></div>
+                            <div class="form-group"><label for="password-input">New Password</label><input class="form-control" type="password" name="new" placeholder="Enter New Password" minlength="8"id="new" style="opacity: 0.4;"></div>
+                            <div class="form-group"><label for="password-input">Confirm New Password</label><input class="form-control" type="password" name="cnfnew" placeholder="Confirm New Password" minlength="8"id="cnfnew" style="opacity: 0.4;"></div>
                             <div class="form-group">
                                 <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-37"><label class="form-check-label" for="formCheck-37">Checkbox</label></div>
                             </div>

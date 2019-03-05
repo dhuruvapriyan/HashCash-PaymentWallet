@@ -24,6 +24,8 @@ else
     $amt2=$row["balance"]-$amt;
     $querry2= "UPDATE hashcash.user SET balance=$amt2 where mobilenumber=$m_no";
     $result2 = mysqli_query($con,$querry2);
+    $querry7= "INSERT INTO hashcash.trdetails (mobilenumber,currentbalance) VALUES ('$m_no','$amt2')";
+    $result7 = mysqli_query($con,$querry7);
     if(!$result2)
     {   
         echo "Transaction Failed";
@@ -50,7 +52,8 @@ else
     $amt3=$row3["balance"]+$amt;
     $querry4= "UPDATE hashcash.user SET balance=$amt3 where mobilenumber=$to_mno";
     $result4 = mysqli_query($con,$querry4);
-
+    $querry6= "INSERT INTO hashcash.trdetails (mobilenumber,currentbalance) VALUES ('$to_mno','$amt3')";
+    $result6 = mysqli_query($con,$querry6);
     if(!$result4)
     {   
         echo "Transaction Failed\n";
@@ -76,6 +79,18 @@ else
 	
 }
 
- mysqli_close($con);
 
-
+ if(!$result5)
+ {
+     echo "Transaction Failed";
+     mysqli_close($con);
+ }
+ else
+ {
+     echo "Transaction Done Successfully";
+     
+ }
+ 
+  mysqli_close($con);
+ 
+ 
