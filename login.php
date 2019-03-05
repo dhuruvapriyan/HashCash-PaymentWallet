@@ -25,7 +25,7 @@ else
 		header("location:index-1.php");
 	}
 	else
-	{
+	{	echo "authentication failed";
 		 header("location:index.php");
 	} 
  }
