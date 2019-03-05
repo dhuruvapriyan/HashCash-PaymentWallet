@@ -15,6 +15,7 @@ $result = mysqli_query($con,$sql);
         #echo $row['mobilenumber'];
 	}
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,6 +28,7 @@ $result = mysqli_query($con,$sql);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
@@ -36,17 +38,15 @@ $result = mysqli_query($con,$sql);
 
 <body id="page-top">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top" data-bs-hover-animate="shake">HashCash</a><button class="navbar-toggler float-right" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Brand</a><button class="navbar-toggler float-right" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div
+                class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#download">PAY</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#features">RECHARGE</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index-2.php">PROFILE</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index-1.php">STATISTICS</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index.php">LOGOUT</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">STATISTICS</a></li>
                 </ul>
-            </div>
+        </div>
         </div>
     </nav>
     <header class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
@@ -54,8 +54,8 @@ $result = mysqli_query($con,$sql);
             <div class="row h-100" style="width: 600px;">
                 <div class="col-lg-7 my-auto">
                     <div class="mx-auto header-content">
-                        <h1 class="mb-5">Hi <?php echo $name?></h1>
-                        <h1 class="mb-5">Balance : <?php echo $bal?></h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#download">Start Now for Free!</a></div>
+                        <h1 class="mb-5">Hi <?php echo $name; ?></h1>
+                        <h1 class="mb-5">Balance : <?php echo $bal; ?></h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#download">Start Now for Free!</a></div>
                 </div>
             </div>
             <div class="table-responsive">
@@ -85,17 +85,9 @@ $result = mysqli_query($con,$sql);
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <h2 class="section-heading">Pay&nbsp;</h2>
-                    <form class="bootstrap-form-with-validation" action = transaction.php>
-                        <div class="form-group"><label for="text-input">Mobile Number</label><input class="form-control" type="text" name="tomobile" placeholder="Enter receiver's mobile number" id="tomobile" style="opacity: 0.4;"></div>
-                        <div class="form-group"><label for="text-input">Transfer Amount</label><input class="form-control" type="text" name="amount" placeholder="Enter transfer amount" id="amount" style="opacity: 0.4;"></div>
-                        <div class="form-group"><label for="password-input">Password</label><input class="form-control" type="password" name="password" placeholder="Enter your account password" id="password" style="opacity: 0.4;"></div>
-                        <div class="form-group">
-                            <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-21"><label class="form-check-label" for="formCheck-21">Checkbox</label></div>
-                        </div>
-                        <div class="form-group"><button class="btn btn-primary" type="submit">PROCESS PAYMENT</button></div>
-                    </form>
-                    <div class="badges"></div>
+                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
+                    <p>Our app is available on any mobile device! Download now to get started!</p>
+                    <div class="badges"><a href="#" class="badge-link"><img src="assets/img/google-play-badge.svg"></a><a href="#" class="badge-link"><img src="assets/img/app-store-badge.svg"></a></div>
                 </div>
             </div>
         </div>
@@ -106,14 +98,14 @@ $result = mysqli_query($con,$sql);
                 <div class="col-12 col-md-4 offset-md-4">
                     <div class="card credit-card-box" style="width: 385px;margin: 34px;">
                         <div class="card-header">
-                            <h3><span class="panel-title-text">Recharge your wallet&nbsp;</span><img class="img-fluid panel-title-image" src="assets/img/accepted_cards.png"></h3>
+                            <h3><span class="panel-title-text">Payment Details </span><img class="img-fluid panel-title-image" src="assets/img/accepted_cards.png"></h3>
                         </div>
                         <div class="card-body">
                             <form id="payment-form">
                                 <div class="form-row">
                                     <div class="col-12">
                                         <div class="form-group"><label for="cardNumber">Card number </label>
-                                            <div class="input-group"><input class="form-control" type="tel" name="card" required="" placeholder="Valid Card Number" id="cardNumber">
+                                            <div class="input-group"><input class="form-control" type="tel" required="" placeholder="Valid Card Number" id="cardNumber">
                                                 <div class="input-group-append"><span class="input-group-text"><i class="fa fa-credit-card"></i></span></div>
                                             </div>
                                         </div>
@@ -121,15 +113,15 @@ $result = mysqli_query($con,$sql);
                                 </div>
                                 <div class="form-row">
                                     <div class="col-7">
-                                        <div class="form-group"><label for="cardExpiry"><span>expiration </span><span>EXP </span> date</label><input class="form-control" type="tel" name="date" required="" placeholder="MM / YY" id="cardExpiry"></div>
+                                        <div class="form-group"><label for="cardExpiry"><span>expiration </span><span>EXP </span> date</label><input class="form-control" type="tel" required="" placeholder="MM / YY" id="cardExpiry"></div>
                                     </div>
                                     <div class="col-5 pull-right">
-                                        <div class="form-group"><label for="cardCVC">cv code</label><input class="form-control" type="tel" name="cvv" required="" placeholder="CVV" id="cardCVC"></div>
+                                        <div class="form-group"><label for="cardCVC">cv code</label><input class="form-control" type="tel" required="" placeholder="CVC" id="cardCVC"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-12">
-                                        <div class="form-group"><label for="couponCode">Amount</label><input class="form-control" type="text" name="amount" placeholder="Enter Amount" id="couponCode"></div>
+                                        <div class="form-group"><label for="couponCode">coupon code</label><input class="form-control" type="text" id="couponCode"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -144,9 +136,26 @@ $result = mysqli_query($con,$sql);
             </div>
         </div>
     </section>
+    <section class="cta" style="background-image:url('assets/img/bg-cta.jpg');">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Stop waiting.<br>Start building.<br></h2><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#contact">Let's Get Started!</a></div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2><span>We&nbsp;</span><i class="fa fa-heart"></i><span>&nbsp;new friends!</span></h2>
+            <ul class="list-inline list-social">
+                <li class="list-inline-item social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item social-google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+        </div>
+    </section>
     <footer>
         <div class="container">
-            <p>©&nbsp;HashCash 2019. All Rights Reserved.</p>
+            <p>©&nbsp;Brand 2018. All Rights Reserved.</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacy</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>

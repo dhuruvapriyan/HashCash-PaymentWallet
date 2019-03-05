@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
@@ -30,58 +31,44 @@
         </div>
         </div>
     </nav>
-    <header class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
+    <header  class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
         <div class="container h-100">
             <div class="row h-100" style="width: 476px;">
                 <div class="col-lg-7 my-auto">
                     <div class="mx-auto header-content">
-                        <h1 data-bs-hover-animate="rubberBand" class="mb-5">Welcome Back.</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#features">SIGN Up For FREE</a></div>
-                </div>
-            </div>
-            <h1 data-bs-hover-animate="rubberBand" class="mb-5">Welcome Back.</h1>
-            <div class="row h-100" style="width: 476px;">
-                <div class="col-lg-7 my-auto">
-                    <div class="mx-auto header-content">
-                        <h1 data-bs-hover-animate="rubberBand" class="mb-5">Welcome Back.</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#features">SIGN Up For FREE</a></div>
+                        <h1 class="mb-5">Write Some Text Here</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#features">SIGN Up For FREE</a></div>
                 </div>
             </div>
         </div>
     </header>
-    <section id="download" class="download text-center bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h2 class="section-heading">LOGIN</h2>
-                    <form class="bootstrap-form-with-validation" action = login.php>
-                        <h2 class="text-center"></h2>
-                        <div class="form-group"><label for="text-input">Mobile Number</label><input class="form-control" type="text" name="mobilenumber" placeholder="Enter your registered mobile number" id="mobilenumber" style="filter: blur(0px);opacity: 0.40;padding: 11px;"></div>
-                        <div
-                            class="form-group"><label for="password-input">Password&nbsp;</label><input class="form-control" type="password" name="password" required="" placeholder="Enter your account password" minlength="8" id="password" style="filter: blur(0px);opacity: 0.40;"></div>
-                <div
-                    class="form-group">
-                    <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-9"><label class="form-check-label" for="formCheck-9">Remember Me</label></div>
+    <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">HashCash LOGIN</h2>
+                </div>
+				<form id="login_form" action="login.php">
+                    <div class="form-group"><label for="Mobile Number">Mobile Number</label><input class="form-control item" type="number" id="mobilenumber" name="mobilenumber"> </div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password" name="password"></div>
+                    <div class="form-group">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
+                    </div><input class="btn btn-primary btn-block" type="submit" value="login">
+                </form>
             </div>
-            <div class="form-group"><button class="btn btn-primary" role="submit">LOGIN</button></div>
-            </form>
-            <div class="badges"><a href="#" class="badge-link"></a><a href="#" class="badge-link"></a></div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <section id="features" class="features" style="color: rgb(33,41,37);background-color: #d5bf88;padding: 150px;">
+        </section>
+    <section id="features" class="features">
         <div class="container">
             <div class="section-heading text-center">
                 <h2>Create Account</h2>
                 <p class="text-muted">Check out what you can do with this app</p>
-                <form class="bootstrap-form-with-validation" action = signup.php>
-                    <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Enter your name" id="name" style="width: 919px;opacity: 0.40;margin: 14px;padding: 16px;height: 39px;"></div>
-                    <div class="form-group"><input class="form-control" type="text" name="mobilenumber" placeholder="Enter your Mobile Number" id="mobilenumber" style="width: 919px;opacity: 0.40;margin: 14px;padding: 16px;"></div>
-                    <div class="form-group">
-                        <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-13"><label class="form-check-label" for="formCheck-13">VERIFY</label></div>
-                    </div>
-                    <div class="form-group"><button class="btn btn-primary" role="submit">GET STARTED</button></div>
-                </form>
                 <hr>
+                <form id="login_form" action="signup.php">
+                    <div class="form-group"><label for="name">Username</label><input class="form-control item" type="text" id="name" name="name"> </div>
+                    <div class="form-group"><label for="Mobile Number">Mobile Number</label><input class="form-control item" type="number" id="mobilenumber" name="mobilenumber"> </div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password" name="password"></div>
+                    <div class="form-group">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
+                    </div><input class="btn btn-primary btn-block" type="submit" value="login">
+                </form>
             </div>
             <div class="row">
                 <div class="col-lg-4 my-auto">
