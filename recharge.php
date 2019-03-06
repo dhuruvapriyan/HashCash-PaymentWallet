@@ -9,7 +9,10 @@ $result = mysqli_query($con,$querry);
 
 if(!$result)
 {
-	echo "Transaction Failed";
+	#echo "Transaction Failed";
+	echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Transaction Failed');
+    </script>");
     mysqli_close($con);
 }
 else
@@ -22,26 +25,71 @@ else
     $result7 = mysqli_query($con,$querry7);
     if(!$result2)
     {   
-        echo "Transaction Failed";
+        #echo "Transaction Failed";
+		echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Transaction Failed');
+    </script>");
         mysqli_close($con);
     }
     else
     {
-        echo "Transaction Processed Successfully ..... \n";
+        #echo "\n";
+		echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Validating Card :)');
+    </script>");
         
     }
 }
+
+
+require 'vendor/autoload.php';
+
+$params = array(
+    'credentials' => array(
+        'key' => 'AKIAISDELT3JHFQBRJEQ',
+        'secret' => 'nmKRbTVrsPuZyidwKWT2anasxnRo1mdqHBcJQ6Eg',
+    ),
+    'region' => 'us-west-2', // < your aws from SNS Topic region
+    'version' => 'latest'
+);
+$sns = new \Aws\Sns\SnsClient($params);
+
+$args = array(
+    "MessageAttributes" => [
+                'AWS.SNS.SMS.SenderID' => [
+                    'DataType' => 'String',
+                    'StringValue' => '42136547'
+                ],
+                'AWS.SNS.SMS.SMSType' => [
+                    'DataType' => 'String',
+                    'StringValue' => 'Transactional'
+                ]
+            ],
+    "Message" => "Hashcash  \n You Recharge request processed successfully . \n your current balance is ".$amt2."rupees",
+    "PhoneNumber" => '+91'.$m_no
+);
+
+
+$result2 = $sns->publish($args);
 $to_mno=0000000000;
 $querry5= "INSERT INTO hashcash.transactions (to1,from1,amount) VALUES ('$m_no','$to_mno','$amt')";
 $result5 = mysqli_query($con,$querry5);
 if(!$result5)
 {
-    echo "Transaction Failed";
+    #echo "Transaction Failed";
+	echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Transaction Failed');
+    window.location.href='index-1.php';
+    </script>");
     mysqli_close($con);
 }
 else
 {
-	echo "Transaction Done Successfully";
+	#echo "Transaction Done Successfully";
+	echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Transaction Done Successfully');
+    window.location.href='index-1.php';
+    </script>");
 	
 }
 mysqli_close($con);

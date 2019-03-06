@@ -13,15 +13,48 @@ $result = mysqli_query($con,$sql);
 		$name=$row['name'];
         $bal=$row['balance'];
         #echo $row['mobilenumber'];
-	}
+    }
+    $querry= "SELECT currentbalance FROM hashcash.trdetails ";
+    $result1 = mysqli_query($con,$querry);
+    $results = mysqli_fetch_array($result1);
+    $dataPoints = array(
+        array("x"=> 0, "y"=>  $results[0]),
+    );	
+    
+    $cnt=0;
+    while($cnt<10)
+    {	$cnt=$cnt+1;
+        $results = mysqli_fetch_array($result1)	;
+        array_push($dataPoints,array("x"=> $cnt, "y"=>  $results[0]));
+    } 
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "Monthly Balance"
+	},
+	axisY: {
+		title: "Balance"
+	},
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>HashCash</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
@@ -49,6 +82,7 @@ $result = mysqli_query($con,$sql);
             </div>
         </div>
     </nav>
+    
     <header class="masthead" style="background:url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);height:100%;">
         <div class="container h-100" style="width: 1136px;">
             <div class="row h-100" style="width: 600px;">
@@ -58,29 +92,12 @@ $result = mysqli_query($con,$sql);
                         <h1 class="mb-5">Balance : <?php echo $bal?></h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="#download">Start Now for Free!</a></div>
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Column 1</th>
-                            <th>Column 2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                        </tr>
-                        <tr>
-                            <td>Cell 3</td>
-                            <td>Cell 4</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
             <section></section>
         </div>
+        
     </header>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <section id="download" class="download text-center bg-primary">
         <div class="container">
             <div class="row">
@@ -91,8 +108,7 @@ $result = mysqli_query($con,$sql);
                         <div class="form-group"><label for="text-input">Transfer Amount</label><input class="form-control" type="text" name="amount" placeholder="Enter transfer amount" id="amount" style="opacity: 0.4;"></div>
                         <div class="form-group"><label for="password-input">Password</label><input class="form-control" type="password" name="password" placeholder="Enter your account password" id="password" style="opacity: 0.4;"></div>
                         <div class="form-group">
-                            <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-21"><label class="form-check-label" for="formCheck-21">Checkbox</label></div>
-                        </div>
+                            </div>
                         <div class="form-group"><button class="btn btn-primary" type="submit">PROCESS PAYMENT</button></div>
                     </form>
                     <div class="badges"></div>

@@ -16,9 +16,10 @@ if(!$result)
 else
 {
 	if($new!=$cnfnew){
-		echo '<script language="javascript">';
-		echo 'alert("Password mismatch")';
-		echo '</script>';
+		echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Password Mismatch');
+    window.location.href='profile.php';
+    </script>");
 		mysqli_close($con);
 	}
 	$querry2= "UPDATE hashcash.user SET password=$new where mobilenumber=$m_no AND password=$old";
@@ -29,7 +30,11 @@ else
 	mysqli_close($con);
 }
 else
-{echo "Password Updated";}
+{#echo "Password Updated";
+echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Password Updated');
+    window.location.href='profile.php';
+    </script>");}
 	
  }
 

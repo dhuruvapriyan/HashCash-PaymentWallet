@@ -19,7 +19,7 @@ $result = mysqli_query($con,$sql);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>HashCash</title>
+    <title>Home - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
@@ -38,8 +38,8 @@ $result = mysqli_query($con,$sql);
             <div
                 class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index-1.php">HOME</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="logout.php">LOGOUT</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index-2.php">profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index.php">LOGOUT</a></li>
                 </ul>
         </div>
         </div>
@@ -49,8 +49,16 @@ $result = mysqli_query($con,$sql);
             <div class="row h-100">
                 <div class="col-lg-7 my-auto">
                     <div class="mx-auto header-content">
-                        <h1 class="mb-5">Hi <?php echo $name?></h1>
-                        <h1 class="mb-5">Your Account is currently active</h1><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="profile.php">CHANGE PASSWORD</a><a class="btn btn-outline-warning btn-xl js-scroll-trigger" role="button" href="delaccount.php">DELETE ACCOUNT</a></div>
+                        <h1 class="mb-5">Hi <?php echo $name ?></h1>
+                        <h1 class="mb-5">Confirm Delete Account</h1>
+                        <form class="bootstrap-form-with-validation" action = deleteAccountBackEnd.php>
+                            <div class="form-group"><label for="password">Password&nbsp;</label><input class="form-control" type="password" name="password" placeholder="Enter your password" id="password-input" style="opacity: 0.4;"></div>
+                            <div class="form-group">
+                                <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox-input" id="formCheck-25"><label class="form-check-label">Checkbox</label></div>
+                            </div>
+                            <div class="form-group"><button class="btn btn-primary" role="submit">DELETE account</button></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
