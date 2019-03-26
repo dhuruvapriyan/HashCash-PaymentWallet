@@ -63,10 +63,7 @@
                         <div class="form-group"><label for="text-input">Mobile Number</label><input class="form-control" type="text" name="mobilenumber" required="" placeholder="Enter your registered mobile number" id="mobilenumber" style="filter: blur(0px);opacity: 0.40;padding: 11px;"></div>
                         <div
                             class="form-group"><label for="password-input">Password&nbsp;</label><input class="form-control" type="password" name="password" required="" placeholder="Enter your account password" minlength="8" id="password" style="filter: blur(0px);opacity: 0.40;"></div>
-                <div
-                    class="form-group">
-                    <div class="g-recaptcha" data-sitekey="6LeXrpUUAAAAADuLAPeyXQlZUECUUVOXnWz1DHFk"></div>
-            </div>
+                
             <div class="form-group"><button class="btn btn-primary" role="submit"  data-bs-hover-animate="jello">LOGIN</button></div>
             </form>
             <div class="badges"><a href="#" class="badge-link"></a><a href="#" class="badge-link"></a></div>
